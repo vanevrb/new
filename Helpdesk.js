@@ -1,5 +1,5 @@
 var config = {
-    host: '1n671058uh9x2yz.us.qlikcloud.com/',
+    host: '1n671058uh9x2yz.us.qlikcloud.com',
     prefix: '/',
     port: 443,
     isSecure: true,
