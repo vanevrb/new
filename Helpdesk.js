@@ -34,14 +34,15 @@ login().then(() => {
         webIntegrationId: config.webIntegrationId
     } );
     //Load js/qlik after authentication is successful
-    require( ["js/qlik"], function ( qlik ) {
-        qlik.on( "error", function ( error ) {
-            $( '#popupText' ).append( error.message + "<br>" );
-            $( '#popup' ).fadeIn( 1000 );
-        } );
-        $( "#closePopup" ).click( function () {
-            $( '#popup' ).hide();
-        } );
+    require(["js/qlik"], function (qlik) {
+	var global = qlik.getGlobal(config);
+	
+	global.on("closed", function () {});
+
+	global.on("error", function ( error ) {
+		alert(error.message);
+	});
+     
         //open apps -- inserted here --
         var app = qlik.openApp( 'e15fe4cf-afa6-484b-b910-2a9e1492e8c0', config );
        
