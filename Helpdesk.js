@@ -47,7 +47,7 @@ login().then(() => {
         var app = qlik.openApp( 'e15fe4cf-afa6-484b-b910-2a9e1492e8c0', config );
        
         //get objects -- inserted here --
-        app.visualization.get('ZhHKJAx').then(function(vis){
+        app.visualization.get('hbBpN').then(function(vis){
         vis.show("QV01");
         } );
         app.visualization.get('pPPkAb').then(function(vis){
